@@ -44,7 +44,7 @@
             <h3><code>transition</code></h3>
             <p class="fragment">Responds to state changes:</p>
             <ul class="fragment">
-              <li><code>:hover, :focus</code></li>
+              <li><code>:hover, :focus, :checked, :invalid</code></li>
               <li>Selector change (class, attribute, etc)</li>
             </ul>
           </section>
@@ -61,6 +61,30 @@
           </section>
 
           <section>
+            <h3><code>transition-property</code></h3>
+            <p class="fragment">A valid CSS property name</p>
+          </section>
+
+          <section>
+            <h3><code>transition-duration</code></h3>
+            <p class="fragment">Total time it takes the transition to run</p>
+            <p class="fragment">default: <code>0s</code></p>
+          </section>
+
+          <section>
+            <h3><code>transition-delay</code></h3>
+            <p class="fragment">Time before the transition begins</p>
+            <p class="fragment">Can be negative: starts transition partway through</p>
+            <p class="fragment">default: <code>0s</code></p>
+          </section>
+
+          <section>
+            <h3><code>transition-timing-function</code></h3>
+            <p class="fragment">Keyword or cubic-bezier function</p>
+            <p class="fragment">default: <code>ease</code></p>
+          </section>
+
+          <section>
             <h3><code>transition</code></h3>
             <pre><code>.box {
   opacity: 1;
@@ -68,6 +92,28 @@
 }
 .box[aria-hidden="true"] {
   opacity: 0;
+}</code></pre>
+          </section>
+
+          <section>
+            <h3><code>transition</code></h3>
+            <pre><code>.field {
+  border-bottom: 2px solid #eee;
+  transition: border-color .1s linear;
+}
+.field:invalid {
+  border-bottom-color: #B71C1C;
+}</code></pre>
+          </section>
+
+          <section>
+            <h3><code>transition</code></h3>
+            <pre><code>.link {
+  transition: transform .15s
+    cubic-bezier(.75,.25,.75,1.5);
+}
+.link:hover {
+  transform: scale(1.15);
 }</code></pre>
           </section>
         </section>
@@ -80,6 +126,10 @@
           <section>
             <h3><code>animation</code></h3>
             <p class="fragment"><code>animation: spinner .2s .3s ease-out infinite altenate paused;</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation</code></h3>
             <ul class="fragment">
               <li><code>animation-name</code></li>
               <li><code>animation-duration</code></li>
@@ -92,6 +142,103 @@
               <li><code>animation-timing-function</code></li>
             </ul>
           </section>
+
+          <section>
+            <h3><code>animation-name</code></h3>
+            <p class="fragment">Corresponds to a <code>keyframes</code> animation in the stylesheet</p>
+          </section>
+
+          <section>
+            <h3><code>animation-duration</code></h3>
+            <p class="fragment">Total time it takes the animation for one complete cycle</p>
+            <p class="fragment">default: <code>0s</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-delay</code></h3>
+            <p class="fragment">Time before the animation begins</p>
+            <p class="fragment">Can be negative: starts animation partway through</p>
+            <p class="fragment">default: <code>0s</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-timing-function</code></h3>
+            <p class="fragment">Keyword or cubic-bezier function</p>
+            <p class="fragment">default: <code>ease</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-iteration-count</code></h3>
+            <p class="fragment">How many times the animation should run before stopping</p>
+            <p class="fragment">default: <code>1</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-direction</code></h3>
+            <p class="fragment">Should an animation play forwards, backwards, or alternating</p>
+            <p class="fragment"><code>normal</code>, <code>reverse</code>, <code>alternate</code>, <code>alternate-reverse</code></p>
+            <p class="fragment">default: <code>normal</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-fill-mode</code></h3>
+            <p class="fragment">How an animation should apply styles to its target before and after running</p>
+            <p class="fragment"><code>none</code>, <code>forwards</code>, <code>backwards</code>, <code>both</code></p>
+            <p class="fragment">default: <code>none</code></p>
+          </section>
+
+          <section>
+            <h3><code>animation-play-state</code></h3>
+            <p class="fragment">Specifies if an animation is running or paused</p>
+            <p class="fragment"><code>running</code>, <code>paused</code></p>
+            <p class="fragment">default: <code>running</code></p>
+          </section>
+
+          <section>
+            <h3><code>keyframes</code></h3>
+            <p class="fragment">A CSS at-rule block, containing styles corresponding to frames in an animation sequence</p>
+          </section>
+
+          <section>
+            <h3><code>keyframes</code></h3>
+            <pre class="fragment"><code>@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}</code></pre>
+          </section>
+
+          <section>
+            <h3><code>keyframes</code></h3>
+            <pre class="fragment"><code>@keyframes wiggle {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: rotate(0deg);
+  }
+  30%, 70% {
+    transform: rotate(-5deg);
+  }
+  50%, 90% {
+    transform: rotate(5deg);
+  }
+}</code></pre>
+          </section>
+
+          <section>
+            <h3><code>keyframes</code></h3>
+            <pre class="fragment"><code>@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50vw, 200%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}</code></pre>
+          </section>
         </section>
 
         <section>
@@ -102,7 +249,7 @@
         </section>
       </div>
 
-      <a id="colophon" href="https://jdsteinbach.com/css-basics-typography">jds.li/typography</a>
+      <a id="colophon" href="https://jdsteinbach.com/css-basics-animation">jds.li/animation</a>
     </div>
 
 
@@ -124,7 +271,6 @@
         transition: 'convex',
         dependencies: [
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/zoom-js/zoom.js', async: true }
         ]
       });
