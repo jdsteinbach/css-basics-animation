@@ -242,8 +242,22 @@
         </section>
 
         <section>
+          <h2>Resources</h2>
+          <ul>
+            <li>MDN: <a rel="noreferrer noopener nofollow" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">Transition</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">Animation</a></li>
+            <li>CSS-Tricks: <a rel="noreferrer noopener nofollow" target="_blank" href="https://css-tricks.com/almanac/properties/t/transition/">Transition</a>, <a rel="noreferrer noopener nofollow" target="_blank" href="https://css-tricks.com/almanac/properties/a/animation/">Animation</a></li>
+            <li>Talk: <a rel="noopener" target="_blank" href="https://jdsteinbach.com/css-animation/#/">Meaningful UI Animations</a></li>
+            <li>Courses: <a rel="noreferrer noopener nofollow" target="_blank" href="https://cssanimation.rocks/">CSS Animation</a></li>
+            <li>Book: <em><a rel="noreferrer noopener nofollow" target="_blank" href="https://abookapart.com/products/animation-at-work">Animation at Work</a></em></li>
+            <li>Course: <a rel="noreferrer noopener nofollow" target="_blank" href="http://rachelnabors.com/css-animations-course/">Web Animation Essentials</a></li>
+            <li>CSS Library: <a rel="noreferrer noopener nofollow" target="_blank" href="https://daneden.github.io/animate.css/">Animate.css</a></li>
+            <li>Examples: <a rel="noreferrer noopener nofollow" target="_blank" href="https://codepen.io/jdsteinbach/pen/MPybZE">Codepen</a></li>
+          </ul>
+        </section>
+
+        <section>
           <h2>James Steinbach</h2>
-          <h3>Senior UX Developer at <a rel="noreferrer noopener nofollow" target="_blank" href="https://dockyard.com/blog/authors/james-steinbach">DockYard</a></h3>
+          <h3>Senior UX Developer<br /> at <a rel="noreferrer noopener nofollow" target="_blank" href="https://dockyard.com/blog/authors/james-steinbach">DockYard</a></h3>
           <h2><code>jdsteinbach</code></h2>
           <h3><a rel="noreferrer noopener nofollow" target="_blank" href="https://twitter.com">Twitter</a> | <a rel="noreferrer noopener nofollow" target="_blank" href="https://github.com/jdsteinbach">Github</a> | <a href="https://jdsteinbach.com">Blog</a></h3>
         </section>
@@ -271,6 +285,7 @@
         transition: 'convex',
         dependencies: [
           { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'plugin/zoom-js/zoom.js', async: true }
         ]
       });
